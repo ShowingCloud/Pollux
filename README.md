@@ -1,4 +1,4 @@
 Pollux
 ======
 
-Website 20130603-02
+Wallet System and Website for some Cryptocoin-based DAC Crowdfunding Ecosystem
