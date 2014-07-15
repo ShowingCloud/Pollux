@@ -16,9 +16,9 @@
         <td><%= address.user_id %></td>
         <td><%= address.address %></td>
         <td><%= address.balance %></td>
-        <td><%= link_to 'Show', address %></td>
-        <td><%= link_to 'Edit', edit_address_path(address) %></td>
-        <td><%= link_to 'Destroy', address, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', user_address_path(@user, address) %></td>
+        <td><%= link_to 'Edit', edit_user_address_path(@user, address) %></td>
+        <td><%= link_to 'Destroy', [@user, address], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Address', new_address_path %>
+<%= link_to 'New Address', new_user_address_path(@user) %>

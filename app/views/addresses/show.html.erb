@@ -15,5 +15,5 @@
   <%= @address.balance %>
 </p>
 
-<%= link_to 'Edit', edit_address_path(@address) %> |
-<%= link_to 'Back', addresses_path %>
+<%= link_to 'Edit', edit_user_address_path(@user, @address) %> |
+<%= link_to 'Back', user_addresses_path(@user) %>
