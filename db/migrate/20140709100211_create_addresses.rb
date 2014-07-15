@@ -8,5 +8,7 @@ class CreateAddresses < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :addresses, :uuid, :unique => true
   end
 end
