@@ -5,13 +5,13 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
-    @users = User.includes(:address).all
+    @users = User.includes(:addresses).all
     respond_with @users
   end
 
   # GET /users/1
   def show
-    @user = User.includes(:address).find params[:id]
+    @user = User.includes(:addresses).find params[:id]
     respond_with @user
   end
 
@@ -31,6 +31,12 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     @user.save
+    @address = @user.addresses.new
+    rpc = BitcoinRPC.new Pollux::RPCURL
+    @address.address = rpc.getnewaddress @user.uuid
+    @address.balance = 0.0
+    @address.save
+    respond_with @user
   end
 
   # PATCH/PUT /users/1

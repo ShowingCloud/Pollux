@@ -14,7 +14,8 @@ class AddressesController < ApplicationController
   def show
     @address = @user.addresses.find params[:id]
     rpc = BitcoinRPC.new Pollux::RPCURL
-#    @address.balance = rpc.getbalance
+    @address.balance = rpc.getreceivedbyaddress @address.address
+    @address.save
     respond_with @address
   end
 
@@ -34,7 +35,7 @@ class AddressesController < ApplicationController
   def create
     @address = @user.addresses.new address_params
     rpc = BitcoinRPC.new Pollux::RPCURL
-    @address.address = rpc.getnewaddress
+    @address.address = rpc.getnewaddress @user.uuid
     @address.balance = 0.0
     @address.save
     respond_with [@user, @address]
@@ -64,6 +65,12 @@ class AddressesController < ApplicationController
   def listaccounts
     rpc = BitcoinRPC.new Pollux::RPCURL
     respond_with ret = { :resp => rpc.listaccounts }, :location => nil and return
+  end
+
+  # GET /addresses/getaddressesbyaccount
+  def getaddressesbyaccount
+    rpc = BitcoinRPC.new Pollux::RPCURL
+    respond_with ret = { :account => @user.uuid, :resp => rpc.getaddressesbyaccount(@user.uuid) }, :location => nil and return
   end
 
   private
