@@ -8,6 +8,9 @@ Rails.application.routes.draw do
         get :getaddressesbyaccount
       end
     end
+    collection do
+      get :login
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
