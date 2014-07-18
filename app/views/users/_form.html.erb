@@ -23,6 +23,9 @@
     <%= f.label :email %><br>
     <%= f.text_field :email %>
   </div>
+  <% if @user.new_record? %>
+    <%= f.simple_captcha label: 'Please enter validation code' %>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>
