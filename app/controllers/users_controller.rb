@@ -67,16 +67,36 @@ class UsersController < ApplicationController
     respond_with @user
   end
 
-  # /users/login
+  # GET /users/login
   def login
-    @user = User.find_by_username(params[:username]).decrypt_password
+    if not params[:username]
+      render and return
+    end
+
+    begin
+      @user = User.find_by_username(params[:username]).decrypt_password
+    rescue
+      @user = User.new
+    end
 
     if params[:password] == @user.password
       session[:username] = params[:username]
-      respond_with ret = { :status => 1 }, :location => nil, :status => :accepted and return
+
+      @user.password = nil
+      respond_with @user do |format|
+        format.html { redirect_to :action => 'index' }
+        format.any(:xml, :json) { render :status => :accepted }
+      end
+
     else
       session[:username] = nil
-      respond_with ret = { :status => 0, :description => "Wrong password" }, :location => nil, :status => :unauthorized and return
+      flash[:notice] = "Wrong account or password"
+
+      respond_with ret = { :status => 0 } do |format|
+        format.html { render }
+        format.any(:xml, :json) { render :status => :unauthorized }
+      end
+
     end
   end
 

@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<%= form_tag({ :controller => 'users', :action => 'login' }, :method => :get) do %>
+  <div class="field">
+    <%= label_tag :username %><br>
+    <%= text_field_tag :username %>
+  </div>
+  <div class="field">
+    <%= label_tag :password %><br>
+    <%= text_field_tag :password %>
+  </div>
+  <%= show_simple_captcha label: 'Please enter validation code' %>
+  <div class="actions">
+    <%= submit_tag :login %>
+  </div>
+<% end %>
