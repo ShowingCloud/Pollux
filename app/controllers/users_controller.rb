@@ -9,6 +9,11 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
+    if not session[:username]
+      flash[:notice] = "Please login first"
+      redirect_to :action => "login" and return
+    end
+
     @users = User.includes(:addresses).all
     @users.each do |user|
       user.addresses.each do |addr|
