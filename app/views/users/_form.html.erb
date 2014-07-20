@@ -1,4 +1,4 @@
-<%= form_for(@user) do |f| %>
+<%= form_for @user, :html => { :onSubmit => %(hash_password()) } do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -23,9 +23,7 @@
     <%= f.label :email %><br>
     <%= f.text_field :email %>
   </div>
-  <% if @user.new_record? %>
-    <%= f.simple_captcha label: 'Please enter validation code', :placeholder => "input the characters" %>
-  <% end %>
+  <%= f.simple_captcha label: 'Please enter validation code', :placeholder => "input the characters" %>
   <div class="actions">
     <%= f.submit %>
   </div>

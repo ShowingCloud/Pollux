@@ -115,9 +115,16 @@ class UsersController < ApplicationController
         render and return
       end
 
+      if params[:user] and params[:user][:captcha]
+        params[:captcha] = params[:user][:captcha]
+        params[:captcha_key] = params[:user][:captcha_key]
+      end
+
       if not simple_captcha_valid?
         flash[:notice] = "Wrong Captcha"
-        respond_with ret = { :status => 2 }, :status => :forbidden and return
+        respond_with ret = { :status => 2 }, :status => :forbidden do |format|
+          format.html { redirect_to :back }
+        end and return
       end
     end
 

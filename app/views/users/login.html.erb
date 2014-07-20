@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<%= form_tag({ :controller => 'users', :action => 'login' }, :method => :get) do %>
+<%= form_tag({ :controller => 'users', :action => 'login' }, { :method => :get, :onSubmit => %(hash_password()) }) do %>
   <div class="field">
     <%= label_tag :username %><br>
     <%= text_field_tag :username %>
