@@ -44,6 +44,7 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = User.find params[:id]
+    @user.password = nil
     respond_with @user
   end
 
