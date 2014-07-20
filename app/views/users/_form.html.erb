@@ -24,7 +24,7 @@
     <%= f.text_field :email %>
   </div>
   <% if @user.new_record? %>
-    <%= f.simple_captcha label: 'Please enter validation code' %>
+    <%= f.simple_captcha label: 'Please enter validation code', :placeholder => "input the characters" %>
   <% end %>
   <div class="actions">
     <%= f.submit %>

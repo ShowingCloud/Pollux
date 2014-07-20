@@ -3,7 +3,8 @@ require 'openssl/cipher'
 require 'base64'
 
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, :only => [:show, :edit, :update, :destroy]
+  before_action :check_captcha, :only => [:create, :login, :update]
 
   respond_to :json, :xml, :html
 
@@ -74,10 +75,6 @@ class UsersController < ApplicationController
 
   # GET /users/login
   def login
-    if not params[:username]
-      render and return
-    end
-
     begin
       @user = User.find_by_username(params[:username]).decrypt_password
     rescue
@@ -88,20 +85,15 @@ class UsersController < ApplicationController
       session[:username] = params[:username]
 
       @user.password = nil
-      respond_with @user do |format|
+      respond_with @user, :status => :accepted do |format|
         format.html { redirect_to :action => 'index' }
-        format.any(:xml, :json) { render :status => :accepted }
       end
 
     else
       session[:username] = nil
       flash[:notice] = "Wrong account or password"
 
-      respond_with ret = { :status => 0 } do |format|
-        format.html { render }
-        format.any(:xml, :json) { render :status => :unauthorized }
-      end
-
+      respond_with ret = { :status => 0 }, :status => :unauthorized
     end
   end
 
@@ -116,6 +108,17 @@ class UsersController < ApplicationController
       params.require(:user).permit(:username, :password, :email,
                                    addresses_attributes: [:address, :balance]
                                   ).encrypt_password
+    end
+
+    def check_captcha
+      if action_name == 'login' and not params[:username]
+        render and return
+      end
+
+      if not simple_captcha_valid?
+        flash[:notice] = "Wrong Captcha"
+        respond_with ret = { :status => 2 }, :status => :forbidden and return
+      end
     end
 
 end
