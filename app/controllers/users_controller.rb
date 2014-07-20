@@ -50,6 +50,13 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
+    if params[:user][:password] == ""
+      flash[:notice] = "Password must be set"
+      respond_with ret = { :status => 0 }, :status => :unauthorized do |format|
+        format.html { redirect_to :back }
+      end and return
+    end
+
     @user = User.new user_params
     @user.save
     @address = @user.addresses.new.tap do |add|
@@ -106,9 +113,14 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:username, :password, :email,
-                                   addresses_attributes: [:address, :balance]
-                                  ).encrypt_password
+      if params[:user][:password] != ""
+        params.require(:user).permit(:username, :password, :email,
+                                     addresses_attributes: [:address, :balance]
+                                    ).encrypt_password
+      else
+        params.require(:user).permit(:username, :email,
+                                     addresses_attributes: [:address, :balance])
+      end
     end
 
     def check_captcha
