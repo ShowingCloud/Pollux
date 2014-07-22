@@ -51,14 +51,16 @@ module PasswordCrypt
     params
   end
 
-  def hash_with_captcha
+  def hash_with_captcha captcha
     params = self
 
     hash = Digest::SHA256.new.tap do |h|
       h.update params[:password]
-      h.update params[:captcha]
-      h
+      h.update captcha
+      params[:password] = h.hexdigest
     end
+
+    params
   end
 
 end

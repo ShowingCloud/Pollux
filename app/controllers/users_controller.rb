@@ -3,18 +3,14 @@ require 'openssl/cipher'
 require 'base64'
 
 class UsersController < ApplicationController
-  before_action :set_user, :only => [:show, :edit, :update, :destroy]
+  before_action :check_login, :except => [:new, :create, :login]
   before_action :check_captcha, :only => [:create, :login, :update]
+  before_action :set_user, :only => [:show, :edit, :update, :destroy]
 
   respond_to :json, :xml, :html
 
   # GET /users
   def index
-    if not session[:username]
-      flash[:notice] = "Please login first"
-      redirect_to :action => "login" and return
-    end
-
     @users = User.includes(:addresses).all
     @users.each do |user|
       user.addresses.each do |addr|
@@ -27,7 +23,6 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
-    @user = User.includes(:addresses).find params[:id]
     @user.addresses.each do |addr|
       addr.balance = BitcoinRPC.new.getreceivedbyaddress addr.address
       addr.save! if addr.changed?
@@ -43,7 +38,6 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    @user = User.find params[:id]
     @user.password = nil
     respond_with @user
   end
@@ -69,14 +63,12 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1
   def update
-    @user = User.find params[:id]
     @user.update user_params
     respond_with @user
   end
 
   # DELETE /users/1
   def destroy
-    @user = User.find params[:id]
     @user.destroy
     respond_with @user
   end
@@ -84,7 +76,9 @@ class UsersController < ApplicationController
   # GET /users/login
   def login
     begin
-      @user = User.find_by_username(params[:username]).decrypt_password
+      @user = User.find_by_username(params[:username]
+                                   ).decrypt_password.hash_with_captcha(
+                                     params[:captcha])
     rescue
       @user = User.new
     end
@@ -108,7 +102,7 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find params[:id]
+      @user = User.includes(:addresses).find_by_username session[:username]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
@@ -138,6 +132,13 @@ class UsersController < ApplicationController
         respond_with ret = { :status => 2 }, :status => :forbidden do |format|
           format.html { redirect_to :back }
         end and return
+      end
+    end
+
+    def check_login
+      if not session[:username]
+        flash[:notice] = "Please login first"
+        redirect_to :action => "login" and return
       end
     end
 
