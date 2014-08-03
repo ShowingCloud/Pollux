@@ -1,7 +1,3 @@
-require 'digest/sha2'
-require 'openssl/cipher'
-require 'base64'
-
 class UsersController < ApplicationController
   before_action :check_login, :except => [:new, :create, :login]
   before_action :check_captcha, :only => [:create, :login, :update]
