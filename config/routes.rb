@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :statistics
+
   resources :users do
     resources :addresses do
       collection do
@@ -10,6 +12,12 @@ Rails.application.routes.draw do
     end
     collection do
       get :login
+    end
+  end
+
+  resources :dashboard do
+    collection do
+      get :refresh
     end
   end
 

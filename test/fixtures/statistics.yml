@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stat_time: 2014-08-03 16:29:58
+  round_ant: 1.5
+  round_btc: 1.5
+  round_trans: 1
+  round_avg_btc: 1.5
+  round_accounts: 1
+  round_rate: 1.5
+  total_ant: 1.5
+  total_btc: 1.5
+  total_trans: 1
+  total_avg_btc: 1.5
+  total_accounts: 1
+  total_rate: 1.5
+
+two:
+  stat_time: 2014-08-03 16:29:58
+  round_ant: 1.5
+  round_btc: 1.5
+  round_trans: 1
+  round_avg_btc: 1.5
+  round_accounts: 1
+  round_rate: 1.5
+  total_ant: 1.5
+  total_btc: 1.5
+  total_trans: 1
+  total_avg_btc: 1.5
+  total_accounts: 1
+  total_rate: 1.5

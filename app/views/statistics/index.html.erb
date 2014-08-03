@@ -1,0 +1,49 @@
+<h1>Listing statistics</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Stat time</th>
+      <th>Round ant</th>
+      <th>Round btc</th>
+      <th>Round trans</th>
+      <th>Round avg btc</th>
+      <th>Round accounts</th>
+      <th>Round rate</th>
+      <th>Total ant</th>
+      <th>Total btc</th>
+      <th>Total trans</th>
+      <th>Total avg btc</th>
+      <th>Total accounts</th>
+      <th>Total rate</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @statistics.each do |statistic| %>
+      <tr>
+        <td><%= statistic.stat_time %></td>
+        <td><%= statistic.round_ant %></td>
+        <td><%= statistic.round_btc %></td>
+        <td><%= statistic.round_trans %></td>
+        <td><%= statistic.round_avg_btc %></td>
+        <td><%= statistic.round_accounts %></td>
+        <td><%= statistic.round_rate %></td>
+        <td><%= statistic.total_ant %></td>
+        <td><%= statistic.total_btc %></td>
+        <td><%= statistic.total_trans %></td>
+        <td><%= statistic.total_avg_btc %></td>
+        <td><%= statistic.total_accounts %></td>
+        <td><%= statistic.total_rate %></td>
+        <td><%= link_to 'Show', statistic %></td>
+        <td><%= link_to 'Edit', edit_statistic_path(statistic) %></td>
+        <td><%= link_to 'Destroy', statistic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Statistic', new_statistic_path %>

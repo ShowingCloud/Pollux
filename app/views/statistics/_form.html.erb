@@ -1,0 +1,69 @@
+<%= form_for(@statistic) do |f| %>
+  <% if @statistic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@statistic.errors.count, "error") %> prohibited this statistic from being saved:</h2>
+
+      <ul>
+      <% @statistic.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :stat_time %><br>
+    <%= f.datetime_select :stat_time %>
+  </div>
+  <div class="field">
+    <%= f.label :round_ant %><br>
+    <%= f.text_field :round_ant %>
+  </div>
+  <div class="field">
+    <%= f.label :round_btc %><br>
+    <%= f.text_field :round_btc %>
+  </div>
+  <div class="field">
+    <%= f.label :round_trans %><br>
+    <%= f.number_field :round_trans %>
+  </div>
+  <div class="field">
+    <%= f.label :round_avg_btc %><br>
+    <%= f.text_field :round_avg_btc %>
+  </div>
+  <div class="field">
+    <%= f.label :round_accounts %><br>
+    <%= f.number_field :round_accounts %>
+  </div>
+  <div class="field">
+    <%= f.label :round_rate %><br>
+    <%= f.text_field :round_rate %>
+  </div>
+  <div class="field">
+    <%= f.label :total_ant %><br>
+    <%= f.text_field :total_ant %>
+  </div>
+  <div class="field">
+    <%= f.label :total_btc %><br>
+    <%= f.text_field :total_btc %>
+  </div>
+  <div class="field">
+    <%= f.label :total_trans %><br>
+    <%= f.number_field :total_trans %>
+  </div>
+  <div class="field">
+    <%= f.label :total_avg_btc %><br>
+    <%= f.text_field :total_avg_btc %>
+  </div>
+  <div class="field">
+    <%= f.label :total_accounts %><br>
+    <%= f.number_field :total_accounts %>
+  </div>
+  <div class="field">
+    <%= f.label :total_rate %><br>
+    <%= f.text_field :total_rate %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
