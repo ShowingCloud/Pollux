@@ -12,7 +12,7 @@
 
 <p>
   <strong>Video Address:</strong>
-  <%= @address.video.html_safe %>
+  <embed src=<%= @address.video %> allowFullScreen="true" quality="high" width="700" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
 </p>
 
 <p>
@@ -25,5 +25,4 @@
   <%= @address.balance %>
 </p>
 
-<%= link_to 'Edit', edit_address_path(@address) %> |
 <%= link_to 'Back', addresses_path(@addresses) %>

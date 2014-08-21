@@ -17,7 +17,7 @@
       <tr>
         <td><%= address.nickname %></td>
         <td><%= address.email %></td>
-        <td><%= address.video.html_safe %></td>
+        <td><embed src=<%= address.video %> allowFullScreen="true" quality="high" width="700" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed></td>
         <td><%= address.address %></td>
         <td><%= address.balance %></td>
         <td><%= link_to 'Show', address_path(address) %></td>
@@ -47,7 +47,7 @@
       <tr>
         <td><%= address.nickname %></td>
         <td><%= address.email %></td>
-        <td><%= address.video.html_safe %></td>
+        <td><embed src=<%= address.video %> allowFullScreen="true" quality="high" width="700" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed></td>
         <td><%= address.address %></td>
         <td><%= address.balance %></td>
         <td><%= link_to 'Show', address_path(address) %></td>
