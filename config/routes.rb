@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :statistics
-
   resources :users do
     resources :addresses do
       collection do
