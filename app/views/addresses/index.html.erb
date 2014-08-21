@@ -1,4 +1,4 @@
-<h1>Listing addresses</h1>
+<h1>Newest Addresses</h1>
 
 <table>
   <thead>
@@ -13,11 +13,41 @@
   </thead>
 
   <tbody>
-    <% @addresses.each do |address| %>
+    <% @addresses_newest.each do |address| %>
       <tr>
         <td><%= address.nickname %></td>
         <td><%= address.email %></td>
-        <td><%= address.video %></td>
+        <td><%= address.video.html_safe %></td>
+        <td><%= address.address %></td>
+        <td><%= address.balance %></td>
+        <td><%= link_to 'Show', address_path(address) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h1>Hottest Addresses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nickname</th>
+      <th>Email</th>
+      <th>Video Address</th>
+      <th>Bitcoin Address</th>
+      <th>Balance</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @addresses_hottest.each do |address| %>
+      <tr>
+        <td><%= address.nickname %></td>
+        <td><%= address.email %></td>
+        <td><%= address.video.html_safe %></td>
         <td><%= address.address %></td>
         <td><%= address.balance %></td>
         <td><%= link_to 'Show', address_path(address) %></td>

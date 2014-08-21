@@ -1,18 +1,15 @@
 class AddressesController < ApplicationController
   before_action :set_address, only: [:show, :edit, :update, :destroy]
-  before_action :set_forbidden, except: [:index, :show, :new, :create]
+  before_action :set_forbidden, except: [:index, :show, :new, :create, :refreshall]
 
   respond_to :json, :xml, :html
 
 
   # GET /addresses
   def index
-    @addresses = Address.all
-    @addresses.each do |addr|
-      addr.balance = BitcoinRPC.new.getreceivedbyaddress addr.address
-      addr.save! if addr.changed?
-    end
-    respond_with @addresses
+    @addresses_newest = Address.order(created_at: :desc).limit(6)
+    @addresses_hottest = Address.order(balance: :desc).limit(9)
+    respond_with [@addresses_newest, @addresses_hottest]
   end
 
   # GET /addresses/1
@@ -64,10 +61,15 @@ class AddressesController < ApplicationController
     respond_with ret = { :resp => BitcoinRPC.new.listaccounts }, :location => nil and return
   end
 
-  # GET /addresses/getaddressesbyaccount
-  def getaddressesbyaccount
-    respond_with ret = { :account => @user.uuid, :resp => BitcoinRPC.new.getaddressesbyaccount(
-      @user.uuid) }, :location => nil and return
+  # GET /addresses/refreshall
+  def refreshall
+    @addresses = Address.all
+    @addresses.each do |addr|
+      addr.balance = BitcoinRPC.new.getreceivedbyaddress addr.address
+      addr.save! if addr.changed?
+    end
+
+    respond_with ret = { :resp => BitcoinRPC.new.getbalance }, :location > nil and return
   end
 
 
