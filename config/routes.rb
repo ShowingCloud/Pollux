@@ -1,21 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :users do
-    resources :addresses do
-      collection do
-        get :getbalance
-        get :listaccounts
-        get :getaddressesbyaccount
-      end
-    end
+  resources :addresses do
     collection do
-      get :login
-    end
-  end
-
-  resources :dashboard do
-    collection do
-      get :refresh
+      get :getbalance
+      get :listaccounts
+      get :getaddressesbyaccount
     end
   end
 
