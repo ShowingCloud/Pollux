@@ -75,7 +75,7 @@ class AddressesController < ApplicationController
       addr.save! if addr.changed?
     end
 
-    respond_with ret = { :resp => BitcoinRPC.new.getbalance }, :location > nil and return
+    respond_with ret = { :resp => BitcoinRPC.new.getbalance }, :location => nil and return
   end
 
 
