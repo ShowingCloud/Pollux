@@ -1,0 +1,700 @@
+body {
+  background-color: rgb(245, 245, 245);
+  font: 700 1em/1.38 Helvetica;
+  color: rgb(121, 120, 121);
+}
+
+.about p {
+  margin-bottom: 1em;
+}
+
+.about {
+  float: left;
+  clear: both;
+  width: 1170px;
+  height: 220px;
+  background-color: rgb(30, 175, 189);
+}
+
+.aboutcontent {
+  width: 85.47008547%;
+  min-height: 156px;
+  margin: 30px auto 0;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.38;
+  color: rgb(255, 255, 255);
+}
+
+.ad1 {
+  float: left;
+  clear: both;
+  width: 1170px;
+  height: 36px;
+  background-color: rgb(232, 230, 42);
+}
+
+.ad2 {
+  position: relative;
+  float: left;
+  clear: both;
+  width: 1170px;
+  height: 65px;
+  background-color: rgb(255, 255, 255);
+}
+
+.adcontent {
+  width: 360px;
+  min-height: 36px;
+  margin: 0 auto;
+  font-size: 1.5em;
+  line-height: 1.5;
+  text-align: center;
+  color: rgb(193, 11, 185);
+}
+
+.adcontent:hover {
+  font-style: normal;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: none;
+}
+
+.all {
+  width: 1170px;
+  margin: 0 auto;
+  background-color: rgb(242, 242, 242);
+}
+
+.banner {
+  float: left;
+  width: 1170px;
+  height: 360px;
+  background: url('/assets/background.jpg') rgb(101, 204, 214);
+  background-repeat: no-repeat;
+  background-size: 1170px 360px;
+  background-position: center center;
+}
+
+.bitcoinlabelitem {
+  position: relative;
+  float: left;
+  width: 135px;
+  height: 36px;
+  min-height: 36px;
+  font-size: 0.938em;
+  line-height: 2.5;
+  text-align: center;
+  color: rgb(121, 120, 121);
+}
+
+.bitcoinnumitem {
+  position: relative;
+  float: left;
+  width: 135px;
+  height: 36px;
+  min-height: 36px;
+  font-size: 0.938em;
+  line-height: 2.5;
+  text-align: center;
+  color: rgb(124, 175, 0);
+}
+
+.btcadlabelitem {
+  position: relative;
+  float: left;
+  clear: both;
+  width: 110px;
+  height: 36px;
+  min-height: 36px;
+  border-right: 1px solid rgb(205, 205, 205);
+  font-size: 0.938em;
+  line-height: 2.5;
+  text-align: center;
+  color: rgb(121, 120, 121);
+}
+
+.bitcoinnumitem:focus,
+.bitcoinnumitem:hover,
+.btcadlabelitem:focus,
+.btcadlabelitem:hover,
+.hotvideotab .bitcoinlabelitem:focus,
+.hotvideotab .bitcoinlabelitem:hover,
+.nicknameitem:focus,
+.nicknameitem:hover,
+.videotitle:active {
+  bottom: auto;
+  right: auto;
+  margin: 0px 0px 0px 4px;
+}
+
+.button1 {
+  width: 250px;
+  height: 45px;
+  margin: 10px auto 0;
+  border: 3px solid rgb(254, 254, 254);
+  border-radius: 15px;
+  background-image: -webkit-linear-gradient(269deg, rgb(158, 233, 217) 0%, rgb(33, 125, 159) 100%);
+  background-image:    -moz-linear-gradient(269deg, rgb(158, 233, 217) 0%, rgb(33, 125, 159) 100%);
+  background-image:      -o-linear-gradient(269deg, rgb(158, 233, 217) 0%, rgb(33, 125, 159) 100%);
+  background-image:     -ms-linear-gradient(269deg, rgb(158, 233, 217) 0%, rgb(33, 125, 159) 100%);
+  background-image:         linear-gradient(181deg, rgb(158, 233, 217) 0%, rgb(33, 125, 159) 100%);
+  font-size: 1.563em;
+  line-height: 1.6;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+.header {
+  float: left;
+  width: 1170px;
+  height: 681px;
+  box-shadow: 0 1px 2px rgba(77, 76, 76, 0.5);
+}
+
+.hotvideotab,
+.newvideotab {
+  float: left;
+  clear: both;
+  width: 1170px;
+  margin-top: 36px;
+  background-color: rgba(192, 249, 255, 0);
+}
+
+.nicknameitem {
+  position: relative;
+  float: left;
+  width: 110px;
+  height: 36px;
+  min-height: 36px;
+  border-right: 1px solid rgb(205, 205, 205);
+  font-size: 1.125em;
+  line-height: 2;
+  text-align: center;
+  color: rgb(121, 120, 121);
+}
+
+.useritem {
+  float: left;
+  clear: both;
+  width: 382px;
+  height: 75px;
+  margin-top: 8px;
+}
+
+.videodiv {
+  float: left;
+  width: 382px;
+}
+
+.videodiv:active,
+.videodiv:focus,
+.videodiv:hover {
+  bottom: auto;
+  right: auto;
+  margin-right: 0;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+}
+
+.videodiv .videodiv {
+  height: 243px;
+  background-color: rgb(238, 253, 255);
+}
+
+.videotitle {
+  float: left;
+  width: 382px;
+  min-height: 36px;
+  border-top-right-radius: 15px;
+  background-color: rgb(30, 175, 189);
+  font-size: 1.375em;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  color: rgb(255, 252, 252);
+  margin: 0px 0px 0px 4px;
+}
+
+.videotitleline {
+  float: left;
+  width: 1170px;
+  height: 36px;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.about:active,
+.about:focus,
+.about:hover,
+.ad1:active,
+.ad1:focus,
+.ad1:hover,
+.ad2:active,
+.ad2:focus,
+.ad2:hover,
+.banner:active,
+.banner:focus,
+.banner:hover,
+.hotvideotab:active,
+.hotvideotab:focus,
+.hotvideotab:hover,
+.newvideotab:active,
+.newvideotab:focus,
+.newvideotab:hover,
+.videotitleline:active,
+.videotitleline:focus,
+.videotitleline:hover {
+  bottom: auto;
+  right: auto;
+  margin-right: 0;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+}
+
+.websiteaddritem {
+  position: relative;
+  float: left;
+  width: 270px;
+  height: 36px;
+  min-height: 36px;
+  border-top: 1px solid rgb(205, 205, 205);
+  font-size: 0.688em;
+  line-height: 3.5;
+  text-align: center;
+  color: rgb(121, 120, 121);
+}
+
+.bitcoinlabelitem:active,
+.bitcoinnumitem:active,
+.btcadlabelitem:active,
+.nicknameitem:active,
+.websiteaddritem:active,
+.websiteaddritem:focus {
+  bottom: auto;
+  right: auto;
+  width: auto;
+  margin-right: 0;
+}
+
+.bitcoinlabelitem-1 {
+  z-index: 98;
+}
+
+.bitcoinlabelitem-10 {
+  z-index: 22;
+}
+
+.bitcoinlabelitem-11 {
+  z-index: 30;
+}
+
+.bitcoinlabelitem-12 {
+  z-index: 38;
+}
+
+.bitcoinlabelitem-2 {
+  z-index: 58;
+}
+
+.bitcoinlabelitem-3 {
+  z-index: 66;
+}
+
+.bitcoinlabelitem-4 {
+  z-index: 74;
+}
+
+.bitcoinlabelitem-5 {
+  z-index: 82;
+}
+
+.bitcoinlabelitem-6 {
+  z-index: 90;
+}
+
+.bitcoinlabelitem-2:focus,
+.bitcoinlabelitem-2:hover,
+.bitcoinlabelitem-3:focus,
+.bitcoinlabelitem-3:hover,
+.bitcoinlabelitem-4:focus,
+.bitcoinlabelitem-4:hover,
+.bitcoinlabelitem-5:focus,
+.bitcoinlabelitem-5:hover,
+.bitcoinlabelitem-6:focus,
+.bitcoinlabelitem-6:hover {
+  bottom: auto;
+  right: auto;
+}
+
+.bitcoinlabelitem-7 {
+  z-index: 46;
+}
+
+.bitcoinlabelitem-8 {
+  z-index: 6;
+}
+
+.bitcoinlabelitem-9 {
+  z-index: 14;
+}
+
+.bitcoinnumitem-1 {
+  z-index: 97;
+}
+
+.bitcoinnumitem-10 {
+  z-index: 21;
+}
+
+.bitcoinnumitem-11 {
+  z-index: 29;
+}
+
+.bitcoinnumitem-12 {
+  z-index: 37;
+}
+
+.bitcoinnumitem-2 {
+  z-index: 57;
+}
+
+.bitcoinnumitem-3 {
+  z-index: 65;
+}
+
+.bitcoinnumitem-4 {
+  z-index: 73;
+}
+
+.bitcoinnumitem-5 {
+  z-index: 81;
+}
+
+.bitcoinnumitem-6 {
+  z-index: 89;
+}
+
+.bitcoinnumitem-7 {
+  z-index: 45;
+}
+
+.bitcoinnumitem-8 {
+  z-index: 5;
+}
+
+.bitcoinnumitem-9 {
+  z-index: 13;
+}
+
+.btcadlabelitem-1 {
+  z-index: 96;
+}
+
+.btcadlabelitem-10 {
+  z-index: 20;
+}
+
+.btcadlabelitem-11 {
+  z-index: 28;
+}
+
+.btcadlabelitem-12 {
+  z-index: 36;
+}
+
+.btcadlabelitem-2 {
+  z-index: 56;
+}
+
+.btcadlabelitem-3 {
+  z-index: 64;
+}
+
+.btcadlabelitem-4 {
+  z-index: 72;
+}
+
+.btcadlabelitem-5 {
+  z-index: 80;
+}
+
+.btcadlabelitem-6 {
+  z-index: 88;
+}
+
+.btcadlabelitem-7 {
+  z-index: 44;
+}
+
+.btcadlabelitem-8 {
+  z-index: 4;
+}
+
+.btcadlabelitem-9 {
+  z-index: 12;
+}
+
+.nicknameitem-1 {
+  z-index: 99;
+}
+
+.nicknameitem-10 {
+  z-index: 23;
+}
+
+.nicknameitem-11 {
+  z-index: 31;
+}
+
+.nicknameitem-12 {
+  z-index: 39;
+}
+
+.nicknameitem-2 {
+  z-index: 59;
+}
+
+.nicknameitem-3 {
+  z-index: 67;
+}
+
+.nicknameitem-4 {
+  z-index: 75;
+}
+
+.nicknameitem-5 {
+  z-index: 83;
+}
+
+.nicknameitem-6 {
+  z-index: 91;
+}
+
+.nicknameitem-7 {
+  z-index: 47;
+}
+
+.nicknameitem-8 {
+  z-index: 7;
+}
+
+.nicknameitem-9 {
+  z-index: 15;
+}
+
+.videodiv-1 {
+  position: relative;
+  margin: 0px 4px 36px 4px;
+  z-index: 102;
+  height: 330px;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 2px rgba(46, 46, 46, 0.5);
+}
+
+.videodiv-11 {
+  position: relative;
+  z-index: 94;
+  height: 330px;
+  margin-left: 1.01763%;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 2px rgba(46, 46, 46, 0.5);
+}
+
+.videodiv-13 {
+  position: relative;
+  clear: both;
+  z-index: 50;
+  height: 330px;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 2px rgba(46, 46, 46, 0.5);
+}
+
+.videodiv-15 {
+  position: relative;
+  z-index: 10;
+  height: 330px;
+  margin-left: 1.01496%;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 2px rgba(46, 46, 46, 0.5);
+}
+
+.videodiv-17 {
+  position: relative;
+  z-index: 18;
+  height: 330px;
+  margin-left: 1.01763%;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 2px rgba(46, 46, 46, 0.5);
+}
+
+.videodiv-19 {
+  position: relative;
+  clear: both;
+  z-index: 26;
+  height: 330px;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 2px rgba(46, 46, 46, 0.5);
+}
+
+.videodiv-21 {
+  position: relative;
+  z-index: 34;
+  height: 330px;
+  margin-left: 1.01496%;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 2px rgba(46, 46, 46, 0.5);
+}
+
+.videodiv-23 {
+  position: relative;
+  z-index: 42;
+  height: 330px;
+  margin-left: 1.01763%;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 2px rgba(46, 46, 46, 0.5);
+}
+
+.videodiv-11:active,
+.videodiv-11:focus,
+.videodiv-11:hover,
+.videodiv-13:active,
+.videodiv-13:focus,
+.videodiv-13:hover,
+.videodiv-15:active,
+.videodiv-15:focus,
+.videodiv-15:hover,
+.videodiv-17:active,
+.videodiv-17:focus,
+.videodiv-17:hover,
+.videodiv-19:active,
+.videodiv-19:focus,
+.videodiv-19:hover,
+.videodiv-1:active,
+.videodiv-1:focus,
+.videodiv-1:hover,
+.videodiv-21:active,
+.videodiv-21:focus,
+.videodiv-21:hover,
+.videodiv-23:active,
+.videodiv-23:focus,
+.videodiv-23:hover,
+.videodiv-3:active,
+.videodiv-3:focus,
+.videodiv-3:hover,
+.videodiv-5:active,
+.videodiv-5:focus,
+.videodiv-5:hover,
+.videodiv-7:active,
+.videodiv-7:focus,
+.videodiv-7:hover,
+.videodiv-9:active,
+.videodiv-9:focus,
+.videodiv-9:hover {
+  box-shadow: 0 1px 2px rgba(46, 46, 46, 0.5);
+}
+
+.videodiv-3 {
+  position: relative;
+  z-index: 62;
+  height: 330px;
+  margin-left: 1.01496%;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 2px rgba(46, 46, 46, 0.5);
+}
+
+.videodiv-5 {
+  position: relative;
+  z-index: 70;
+  height: 330px;
+  margin-left: 1.01763%;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 2px rgba(46, 46, 46, 0.5);
+}
+
+.videodiv-7 {
+  position: relative;
+  clear: both;
+  z-index: 78;
+  height: 330px;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 2px rgba(46, 46, 46, 0.5);
+}
+
+.videodiv-9 {
+  position: relative;
+  z-index: 86;
+  height: 330px;
+  margin-left: 1.01496%;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 2px rgba(46, 46, 46, 0.5);
+}
+
+.videotitleline-2,
+.videotitleline-4 {
+  clear: both;
+}
+
+.websiteaddritem-1 {
+  z-index: 100;
+}
+
+.websiteaddritem-10 {
+  z-index: 24;
+}
+
+.websiteaddritem-11 {
+  z-index: 32;
+}
+
+.websiteaddritem-12 {
+  z-index: 40;
+}
+
+.websiteaddritem-2 {
+  z-index: 60;
+}
+
+.websiteaddritem-3 {
+  z-index: 68;
+}
+
+.websiteaddritem-4 {
+  z-index: 76;
+}
+
+.websiteaddritem-5 {
+  z-index: 84;
+}
+
+.websiteaddritem-6 {
+  z-index: 92;
+}
+
+.websiteaddritem-7 {
+  z-index: 48;
+}
+
+.websiteaddritem-8 {
+  z-index: 8;
+}
+
+.websiteaddritem-9 {
+  z-index: 16;
+}

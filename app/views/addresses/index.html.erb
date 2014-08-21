@@ -1,59 +1,58 @@
-<h1>Newest Addresses</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Nickname</th>
-      <th>Video Address</th>
-      <th>Bitcoin Address</th>
-      <th>Balance</th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @addresses_newest.each do |address| %>
-      <tr>
-        <td><%= address.nickname %></td>
-        <td><embed src=<%= address.video %> allowFullScreen="true" quality="high" width="700" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed></td>
-        <td><%= address.address %></td>
-        <td><%= address.balance %></td>
-        <td><%= link_to 'Show', address_path(address) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<h1>Hottest Addresses</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Nickname</th>
-      <th>Video Address</th>
-      <th>Bitcoin Address</th>
-      <th>Balance</th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody class="hottest">
-    <input type="hidden" class="is_bottom" value=0></input>
-    <% @addresses_hottest.each do |address| %>
-      <tr>
-        <td class="nickname"><%= address.nickname %></td>
-        <td class="video"><embed src=<%= address.video %> allowFullScreen="true" quality="high" width="700" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed></td>
-        <td class="address"><%= address.address %></td>
-        <td class="balance"><%= address.balance %></td>
-        <td><%= link_to 'Show', address_path(address) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<body class="body index clearfix">
+  <div id="all" class="all clearfix">
+    <div id="header" class="header clearfix">
+      <div id="banner" class="banner"></div>
+      <div id="ad1" class="ad1 clearfix">
+        <p id="adcontent" class="adcontent">比特币#ALS冰桶挑战# 活动公告</p>
+      </div>
+      <div id="about" class="about clearfix">
+        <div id="aboutcontent" class="aboutcontent">
+          <p>基于密码学货币技术的去中心化众筹解决方案 ( Kickstarter + NASDAQ + Facebook ) x Bitcoin</p>
+          <p>基于密码学货币技术的去中心化众筹解决方案 ( Kickstarter + NASDAQ + Facebook ) x Bitcoin基于密码学货币技术的去中心化众筹解决方案 ( Kickstarter + NASDAQ + Facebook ) x Bitcoin基于密码学货币技术的去中心化众筹解决方案 ( Kickstarter + NASDAQ + Facebook ) x Bitcoin基于密码学货币技术的去中心化众筹解决方案 ( Kickstarter + NASDAQ + Facebook ) x Bitcoin</p>
+          <p>基于密码学货币技术的去中心化众筹解决方案 ( Kickstarter + NASDAQ + Facebook ) x Bitcoin</p>
+</div>
+      </div>
+      <div id="ad2" class="ad2 clearfix">
+        <div class="button1"><span>参与挑战&nbsp;</span></div>
+      </div>
+    </div>
+    <div id="newvideotab" class="newvideotab clearfix">
+      <div class="videotitleline clearfix">
+        <p class="videotitle">最新上传</p>
+      </div>
+      <% @addresses_recent.each do |address| %>
+        <div class="videodiv videodiv-1 clearfix">
+          <div class="videodiv"><embed src=<%= address.video %> allowFullScreen="true" quality="high" width="382" height="243" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed></div>
+          <div class="useritem clearfix">
+            <p class="nicknameitem nicknameitem-1"><%= address.nickname %></p>
+            <p class="bitcoinlabelitem bitcoinlabelitem-1">比特币募资金额：</p>
+            <p class="bitcoinnumitem bitcoinnumitem-1"><%= address.balance %></p>
+            <p class="btcadlabelitem btcadlabelitem-1">募资地址:</p>
+            <p class="websiteaddritem websiteaddritem-1"><%= link_to address.address, address_path(address) %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div id="hottest" class="hotvideotab clearfix">
+      <div class="videotitleline clearfix">
+        <p class="videotitle">热门视频</p>
+      </div>
+      <input type="hidden" id="is_bottom" value=0></input>
+      <% @addresses_hottest.each do |address| %>
+        <div class="videodiv videodiv-1 clearfix">
+          <div class="videodiv videoitem"><embed src=<%= address.video %> allowFullScreen="true" quality="high" width="382" height="243" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed></div>
+          <div class="useritem clearfix">
+            <p class="nicknameitem nicknameitem-1"><%= address.nickname %></p>
+            <p class="bitcoinlabelitem bitcoinlabelitem-1">比特币募资金额：</p>
+            <p class="bitcoinnumitem bitcoinnumitem-1"><%= address.balance %></p>
+            <p class="btcadlabelitem btcadlabelitem-1">募资地址:</p>
+            <p class="websiteaddritem websiteaddritem-1"><%= link_to address.address, address_path(address) %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</body>
 
 <%= link_to 'New Address', new_address_path(@address) %>
 
@@ -66,19 +65,19 @@
           window.clearTimeout (timer);
         }
 
-        if ($(".is_bottom").val() == 0) {
+        if ($("#is_bottom").val() == 0) {
           timer = window.setTimeout (function() {
             if ($(document).height() <= ($(window).height() + $(window).scrollTop())) {
-              $.getJSON ('/addresses/getmore.json', { offset: $(".hottest tr").length }).done (function (data) {
+              $.getJSON ('/addresses/getmore.json', { offset: $("#hottest .hottest_item").length * 0 }).done (function (data) {
                 if (!data.length) {
-                  $(".is_bottom").val(1);
+                  $("#is_bottom").val(1);
                 } else {
                   $.each (data, function (i, item) {
-                    $(".hottest tr:first-child").clone().appendTo(".hottest")
-                      .find(".nickname").html(item.nickname).end()
-                      .find(".video").html("<embed src=" + item.video + " allowFullScreen=\"true\" quality=\"high\" width=\"700\" height=\"400\" align=\"middle\" allowScriptAccess=\"always\" type=\"application/x-shockwave-flash\"></embed>").end()
-                      .find(".address").html(item.address).end()
-                      .find(".balance").html(item.balance);
+                    $("#hottest > div:last-child").clone().appendTo("#hottest")
+                      .find(".nicknameitem").html(item.nickname).end()
+                      .find(".videoitem").html("<embed src=" + item.video + " allowFullScreen=\"true\" quality=\"high\" width=\"382\" height=\"243\" align=\"middle\" allowScriptAccess=\"always\" type=\"application/x-shockwave-flash\"></embed>").end()
+                      .find(".websiteaddritem a").attr("href", item.url).html(item.address).end()
+                      .find(".bitcoinnumitem").html(item.balance);
                   });
                 }
               });

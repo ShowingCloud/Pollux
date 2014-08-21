@@ -9,9 +9,9 @@ class AddressesController < ApplicationController
   def index
     respond_to do |format|
       format.html {
-        @addresses_newest = Address.order(created_at: :desc).limit(6)
+        @addresses_recent = Address.order(created_at: :desc).limit(6)
         @addresses_hottest = Address.order(balance: :desc).limit(9)
-        [@addresses_newest, @addresses_hottest] }
+        [@addresses_recent, @addresses_hottest] }
       format.any(:xml, :json) { @addresses = Address.all }
     end
   end
