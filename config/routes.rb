@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   resources :addresses do
     collection do
+      get :getmore
       get :getbalance
       get :listaccounts
       get :refreshall

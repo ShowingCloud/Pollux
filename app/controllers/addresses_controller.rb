@@ -1,6 +1,6 @@
 class AddressesController < ApplicationController
   before_action :set_address, only: [:show, :edit, :update, :destroy]
-  before_action :set_forbidden, except: [:index, :show, :new, :create, :refreshall]
+  before_action :set_forbidden, except: [:index, :show, :new, :create, :refreshall, :getmore]
 
   respond_to :json, :xml, :html
 
@@ -10,6 +10,12 @@ class AddressesController < ApplicationController
     @addresses_newest = Address.order(created_at: :desc).limit(6)
     @addresses_hottest = Address.order(balance: :desc).limit(9)
     respond_with [@addresses_newest, @addresses_hottest]
+  end
+
+  # GET /addresses/getmore
+  def getmore
+    @addresses = Address.order(balance: :desc).limit(9).offset(params[:offset])
+    respond_with @addresses
   end
 
   # GET /addresses/1
