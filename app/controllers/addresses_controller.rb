@@ -36,7 +36,7 @@ class AddressesController < ApplicationController
   # POST /addresses
   def create
     @address = Address.new address_params
-    @address.address = BitcoinRPC.new.getnewaddress @user.uuid
+    @address.address = BitcoinRPC.new.getnewaddress @address.nickname
     @address.balance = 0.0
     @address.save
     respond_with @address

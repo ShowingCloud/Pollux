@@ -1,12 +1,22 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
-  <%= @address.user_id %>
+  <strong>Nickname:</strong>
+  <%= @address.nickname %>
 </p>
 
 <p>
-  <strong>Address:</strong>
+  <strong>Email:</strong>
+  <%= @address.email %>
+</p>
+
+<p>
+  <strong>Video Address:</strong>
+  <%= @address.video.html_safe %>
+</p>
+
+<p>
+  <strong>Bitcoin Address:</strong>
   <%= @address.address %>
 </p>
 
@@ -15,5 +25,5 @@
   <%= @address.balance %>
 </p>
 
-<%= link_to 'Edit', edit_user_address_path(@user, @address) %> |
-<%= link_to 'Back', user_addresses_path(@user) %>
+<%= link_to 'Edit', edit_address_path(@address) %> |
+<%= link_to 'Back', addresses_path(@addresses) %>
