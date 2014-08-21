@@ -3,7 +3,7 @@
     <div id="header" class="header clearfix">
       <div id="banner" class="banner"></div>
       <div id="ad1" class="ad1 clearfix">
-        <p id="adcontent" class="adcontent">比特币#ALS冰桶挑战# 活动公告</p>
+        <p id="addcontent" class="addcontent">比特币#ALS冰桶挑战# 活动公告</p>
       </div>
       <div id="about" class="about clearfix">
         <div id="aboutcontent" class="aboutcontent">
@@ -13,7 +13,7 @@
 </div>
       </div>
       <div id="ad2" class="ad2 clearfix">
-        <div class="button1"><span>参与挑战&nbsp;</span></div>
+        <div class="button1" onclick="javascript:openpopup();"><span>参与挑战</span></div>
       </div>
     </div>
     <div id="newvideotab" class="newvideotab clearfix">
@@ -52,9 +52,11 @@
       <% end %>
     </div>
   </div>
-</body>
 
-<%= link_to 'New Address', new_address_path(@address) %>
+  <div id="popup_dialog" class="popup_dialog"></div>
+  <div id="popup_shadow" class="popup_shadow"></div>
+
+</body>
 
 <% content_for :javascripts do %>
   <script>
@@ -86,5 +88,35 @@
         }
       });
     });
+
+  function openpopup() {
+    var popup = $('#popup_dialog');
+    var newdiv = $('#popup_shadow');
+
+    newdiv.css ("display", "block");
+    newdiv.css ("top", $(window).scrollTop());
+    $('body').css ("overflow", "hidden");
+
+    popup.css ("display", "block");
+    popup.css ("height", "500px");
+    popup.css ("width", "500px");
+    popup.html ("<iframe width=100% height=100% src=\"/addresses/new\"></iframe>");
+
+    newdiv.click (function() {
+      popup.css ("display", "none");
+      newdiv.css ("display", "none");
+      $('body').css ("overflow", "auto");
+    });
+
+    $('body').keydown (function() {
+        if (event.keyCode == 27) {
+          popup.css ("display", "none");
+          newdiv.css ("display", "none");
+          $('body').css ("overflow", "auto");
+          $('body').unbind ('keydown');
+        }
+    });
+
+  }
   </script>
 <% end %>

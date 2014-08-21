@@ -4,6 +4,7 @@ xml.addresses do
     xml.address do
       xml.id address.id
       xml.uuid address.uuid
+      xml.nickname address.nickname
       xml.video address.video
       xml.address address.address
       xml.balance address.balance
