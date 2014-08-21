@@ -46,6 +46,7 @@ class AddressesController < ApplicationController
     @address.address = BitcoinRPC.new.getnewaddress @address.nickname
     @address.balance = 0.0
     @address.save
+    UserNotifier.send_signup_email(@address).deliver
     respond_with @address
   end
 
