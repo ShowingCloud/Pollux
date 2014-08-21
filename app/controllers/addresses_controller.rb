@@ -7,9 +7,13 @@ class AddressesController < ApplicationController
 
   # GET /addresses
   def index
-    @addresses_newest = Address.order(created_at: :desc).limit(6)
-    @addresses_hottest = Address.order(balance: :desc).limit(9)
-    respond_with [@addresses_newest, @addresses_hottest]
+    respond_to do |format|
+      format.html {
+        @addresses_newest = Address.order(created_at: :desc).limit(6)
+        @addresses_hottest = Address.order(balance: :desc).limit(9)
+        [@addresses_newest, @addresses_hottest] }
+      format.any(:xml, :json) { @addresses = Address.all }
+    end
   end
 
   # GET /addresses/getmore
