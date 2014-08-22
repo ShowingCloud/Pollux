@@ -42,3 +42,4 @@ gem 'thin'
 # gem 'debugger', group: [:development, :test]
 
 gem 'yaml_db'
+gem 'httparty'
