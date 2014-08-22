@@ -475,7 +475,8 @@ textarea,
 select {
   font-size: inherit;
   color: inherit;
-  border: none;
+  border: 2px;
+  border-color: rgb(121, 120, 121);
 }
 img {
   width: 100%;

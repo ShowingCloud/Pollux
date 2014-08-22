@@ -44,7 +44,7 @@ body {
 }
 
 .addcontent {
-  width: 360px;
+  width: 500px;
   min-height: 36px;
   margin: 0 auto;
   font-size: 1.5em;
@@ -115,35 +115,38 @@ body {
   color: rgb(121, 120, 121);
 }
 
-.bitcoinnumitem:focus,
-.bitcoinnumitem:hover,
-.btcadlabelitem:focus,
-.btcadlabelitem:hover,
-.hotvideotab .bitcoinlabelitem:focus,
-.hotvideotab .bitcoinlabelitem:hover,
-.nicknameitem:focus,
-.nicknameitem:hover,
-.videotitle:active {
-  bottom: auto;
-  right: auto;
-  margin: 0px 0px 0px 4px;
+.button1 {
+    width:250px;
+    height:45px;
+    margin:10px auto 0;
+    border:3px solid rgb(254, 254, 254);
+    border-radius:15px;
+    background-image:-webkit-linear-gradient(269deg, rgb(158, 233, 217) 0%, rgb(33, 125, 159) 100%);
+    background-image:-moz-linear-gradient(269deg, rgb(158, 233, 217) 0%, rgb(33, 125, 159) 100%);
+    background-image:-o-linear-gradient(269deg, rgb(158, 233, 217) 0%, rgb(33, 125, 159) 100%);
+    background-image:-ms-linear-gradient(269deg, rgb(158, 233, 217) 0%, rgb(33, 125, 159) 100%);
+    background-image:linear-gradient(269deg, rgb(158, 233, 217) 0%, rgb(33, 125, 159) 100%);
+    font-size:1.563em;
+    line-height:1.6;
+    text-align:center;
+    color:rgb(255, 255, 255);
 }
 
-.button1 {
-  width: 250px;
-  height: 45px;
-  margin: 10px auto 0;
-  border: 3px solid rgb(254, 254, 254);
-  border-radius: 15px;
-  background-image: -webkit-linear-gradient(269deg, rgb(158, 233, 217) 0%, rgb(33, 125, 159) 100%);
-  background-image:    -moz-linear-gradient(269deg, rgb(158, 233, 217) 0%, rgb(33, 125, 159) 100%);
-  background-image:      -o-linear-gradient(269deg, rgb(158, 233, 217) 0%, rgb(33, 125, 159) 100%);
-  background-image:     -ms-linear-gradient(269deg, rgb(158, 233, 217) 0%, rgb(33, 125, 159) 100%);
-  background-image:         linear-gradient(181deg, rgb(158, 233, 217) 0%, rgb(33, 125, 159) 100%);
-  font-size: 1.563em;
-  line-height: 1.6;
-  text-align: center;
-  color: rgb(255, 255, 255);
+.button1:hover {
+    background-image:-webkit-linear-gradient(269deg, rgb(158, 233, 217) 0%, rgb(0, 0, 0) 0%, rgb(255, 255, 255) 0.2380952380952381%, rgb(159, 251, 235) 0%, rgb(40, 169, 217) 100%);
+    background-image:-moz-linear-gradient(269deg, rgb(158, 233, 217) 0%, rgb(0, 0, 0) 0%, rgb(255, 255, 255) 0.2380952380952381%, rgb(159, 251, 235) 0%, rgb(40, 169, 217) 100%);
+    background-image:-o-linear-gradient(269deg, rgb(158, 233, 217) 0%, rgb(0, 0, 0) 0%, rgb(255, 255, 255) 0.2380952380952381%, rgb(159, 251, 235) 0%, rgb(40, 169, 217) 100%);
+    background-image:-ms-linear-gradient(269deg, rgb(158, 233, 217) 0%, rgb(0, 0, 0) 0%, rgb(255, 255, 255) 0.2380952380952381%, rgb(159, 251, 235) 0%, rgb(40, 169, 217) 100%);
+    background-image:linear-gradient(269deg, rgb(158, 233, 217) 0%, rgb(0, 0, 0) 0%, rgb(255, 255, 255) 0.2380952380952381%, rgb(159, 251, 235) 0%, rgb(40, 169, 217) 100%);
+}
+
+.button1:active {
+    background-image:-webkit-linear-gradient(269deg, rgb(0, 122, 144) 0%, rgb(54, 153, 185) 100%);
+    background-image:-moz-linear-gradient(269deg, rgb(0, 122, 144) 0%, rgb(54, 153, 185) 100%);
+    background-image:-o-linear-gradient(269deg, rgb(0, 122, 144) 0%, rgb(54, 153, 185) 100%);
+    background-image:-ms-linear-gradient(269deg, rgb(0, 122, 144) 0%, rgb(54, 153, 185) 100%);
+    background-image:linear-gradient(269deg, rgb(0, 122, 144) 0%, rgb(54, 153, 185) 100%);
+    color:rgb(255, 249, 173);
 }
 
 .header {
@@ -191,13 +194,7 @@ body {
 .videodiv:active,
 .videodiv:focus,
 .videodiv:hover {
-  bottom: auto;
-  right: auto;
-  margin-right: 0;
-  padding-top: 0;
-  padding-right: 0;
-  padding-bottom: 0;
-  padding-left: 0;
+  background-color: rgb(237, 255, 218);
 }
 
 .videodiv .videodiv {

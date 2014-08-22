@@ -3,13 +3,11 @@
     <div id="header" class="header clearfix">
       <div id="banner" class="banner"></div>
       <div id="ad1" class="ad1 clearfix">
-        <p id="addcontent" class="addcontent">比特币#ALS冰桶挑战# 活动公告</p>
+        <p id="addcontent" class="addcontent">小蚁社区比特币ALS#冰桶挑战# 活动公告</p>
       </div>
       <div id="about" class="about clearfix">
         <div id="aboutcontent" class="aboutcontent">
-          <p>基于密码学货币技术的去中心化众筹解决方案 ( Kickstarter + NASDAQ + Facebook ) x Bitcoin</p>
-          <p>基于密码学货币技术的去中心化众筹解决方案 ( Kickstarter + NASDAQ + Facebook ) x Bitcoin基于密码学货币技术的去中心化众筹解决方案 ( Kickstarter + NASDAQ + Facebook ) x Bitcoin基于密码学货币技术的去中心化众筹解决方案 ( Kickstarter + NASDAQ + Facebook ) x Bitcoin基于密码学货币技术的去中心化众筹解决方案 ( Kickstarter + NASDAQ + Facebook ) x Bitcoin</p>
-          <p>基于密码学货币技术的去中心化众筹解决方案 ( Kickstarter + NASDAQ + Facebook ) x Bitcoin</p>
+          <p>"当比特币遇上冰桶挑战" 来吧，给你认为最赞的#冰桶挑战#者发送比特币，这些比特币将以挑战者的名义捐献给慈善组织。是时候show出btc社区的力量啦！</p>
 </div>
       </div>
       <div id="ad2" class="ad2 clearfix">
@@ -70,7 +68,7 @@
         if ($("#is_bottom").val() == 0) {
           timer = window.setTimeout (function() {
             if ($(document).height() <= ($(window).height() + $(window).scrollTop())) {
-              $.getJSON ('/addresses/getmore.json', { offset: $("#hottest .hottest_item").length * 0 }).done (function (data) {
+            $.getJSON ('/addresses/getmore.json', { offset: $("#hottest > div").length - 1 }).done (function (data) {
                 if (!data.length) {
                   $("#is_bottom").val(1);
                 } else {
@@ -98,7 +96,7 @@
     $('body').css ("overflow", "hidden");
 
     popup.css ("display", "block");
-    popup.css ("height", "500px");
+    popup.css ("height", "400px");
     popup.css ("width", "500px");
     popup.html ("<iframe width=100% height=100% src=\"/addresses/new\"></iframe>");
 
