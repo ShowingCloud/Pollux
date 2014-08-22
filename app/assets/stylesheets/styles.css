@@ -44,27 +44,19 @@ body {
 }
 
 .addcontent {
-  width: 500px;
+  width: auto;
   min-height: 36px;
   margin: 0 auto;
-  font-size: 1.5em;
-  line-height: 1.5;
+  font-size: 2em;
+  line-height: 2;
   text-align: center;
   color: rgb(193, 11, 185);
-}
-
-.addcontent:hover {
-  font-style: normal;
-  font-size: 24px;
-  font-weight: 700;
-  text-align: center;
-  text-transform: none;
 }
 
 .all {
   width: 1170px;
   margin: 0 auto;
-  background-color: rgb(242, 242, 242);
+  background-color: rgb(224, 224, 224);
 }
 
 .banner {
@@ -272,10 +264,10 @@ body {
 .nicknameitem:active,
 .websiteaddritem:active,
 .websiteaddritem:focus {
-  bottom: auto;
-  right: auto;
-  width: auto;
-  margin-right: 0;
+  /* bottom: auto; */
+  /* right: auto; */
+  /* width: auto; */
+  /* margin-right: 0; */
 }
 
 .bitcoinlabelitem-1 {
