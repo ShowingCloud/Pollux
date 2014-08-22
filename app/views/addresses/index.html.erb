@@ -22,11 +22,11 @@
         <div class="videodiv videodiv-1 clearfix">
           <div class="videodiv"><embed src=<%= address.video %> allowFullScreen="true" quality="high" width="382" height="243" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed></div>
           <div class="useritem clearfix">
-            <p class="nicknameitem nicknameitem-1"><%= address.nickname %></p>
+            <p class="nicknameitem nicknameitem-1"><%= link_to address.nickname, address_path(address), :target => "_blank" %></p>
             <p class="bitcoinlabelitem bitcoinlabelitem-1">已捐金额：</p>
             <p class="bitcoinnumitem bitcoinnumitem-1"><%= address.balance %></p>
             <p class="btcadlabelitem btcadlabelitem-1">捐币地址:</p>
-            <p class="websiteaddritem websiteaddritem-1"><%= link_to address.address, address_path(address) %></p>
+            <p class="websiteaddritem websiteaddritem-1"><%= link_to address.address, "Bitcoin:" + address.address %></p>
           </div>
         </div>
       <% end %>
@@ -40,11 +40,11 @@
         <div class="videodiv videodiv-1 clearfix">
           <div class="videodiv videoitem"><embed src=<%= address.video %> allowFullScreen="true" quality="high" width="382" height="243" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed></div>
           <div class="useritem clearfix">
-            <p class="nicknameitem nicknameitem-1"><%= address.nickname %></p>
+            <p class="nicknameitem nicknameitem-1"><%= link_to address.nickname, address_path(address), :target => "_blank" %></p>
             <p class="bitcoinlabelitem bitcoinlabelitem-1">已捐金额：</p>
             <p class="bitcoinnumitem bitcoinnumitem-1"><%= address.balance %></p>
             <p class="btcadlabelitem btcadlabelitem-1">捐币地址:</p>
-            <p class="websiteaddritem websiteaddritem-1"><%= link_to address.address, address_path(address) %></p>
+            <p class="websiteaddritem websiteaddritem-1"><%= link_to address.address, "Bitcoin:" + address.address %></p>
           </div>
         </div>
       <% end %>
