@@ -1,23 +1,96 @@
-<p id="notice"><%= notice %></p>
+<body class="body index clearfix">
+  <p id="notice"><%= notice %></p>
+  <div id="oneall" class="oneall clearfix">
+    <div id="header" class="header clearfix">
+      <div id="banner" class="banner"></div>
+      <div id="ad1" class="ad1 clearfix">
+        <p id="addcontent" class="addcontent">小蚁社区比特币ALS#冰桶挑战# 活动公告</p>
+      </div>
+      <div id="about" class="about clearfix">
+        <div id="aboutcontent" class="aboutcontent">
+          <p>比特币遇上冰桶挑战</p>
+          <p>你的偶像“冰桶”了吗？来吧，上传你喜欢的冰桶视频，让比特币社区为他的努力加油。你也可以贡献力量，发送比特币，为最赞的#冰桶挑战#者加油。这些比特币将集中后以中国比特币社区的名义捐献给ALS慈善组织。是时候Show出BTC社区的力量啦！</p>
+          <p>参与方式：</p>
+          <p>1.分享你喜欢的冰桶视频（优酷/土豆/搜狐/爱奇艺）的冰桶视频为慈善募币<br/>
+          2.分享自己亲自参与的冰桶视频（优酷/土豆/搜狐/爱奇艺）为慈善募币<br/>
+          3.为自己喜欢的视频发送比特币</p>
+          <p>小蚁官网当然也会献出爱心，把我们的比特币投给最酷的挑战者--小蚁超人。</p>
+        </div>
+      </div>
+      <div id="ad2" class="ad2 clearfix">
+        <div class="button1" onclick="javascript:openpopup();"><span>火速参加</span></div>
+      </div>
+    </div>
+    <div id="onevideotab" class="onevideotab clearfix">
+      <div class="onevideotitleline clearfix">
+        <p class="onevideotitle">Nickname:</p>
+      </div>
+      <div class="onevideodiv onevideodiv-1 clearfix">
+        <div class="onevideodiv"><embed src=<%= @address.video %> allowFullScreen="true" quality="high" width="1170" height="668" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed></div>
+        <div class="useritem clearfix">
+          <p class="nicknameitem nicknameitem-1"><%= @address.nickname %></p>
+          <p class="bitcoinlabelitem bitcoinlabelitem-1">已捐金额：</p>
+          <p class="bitcoinnumitem bitcoinnumitem-1"><%= @address.balance %></p>
+          <p class="btcadlabelitem btcadlabelitem-1">捐币地址:</p>
+          <p class="websiteaddritem websiteaddritem-1"><%= link_to @address.address, "Bitcoin:" + @address.address %></p>
+        </div>
+      </div>
+      <div class="onevideotitleline clearfix">
+        <p class="titlelinebottom">Nickname:</p>
+      </div>
+      <section id="footer" class="footer">
+        <div class="separator80" ></div>
+        <div class="footlogo">
+          <a href="http://www.antshares.org"><img src="/assets/LOGO_footer.png" alt="AntShares"/></a>
+        </div>
+        <div class="separator80"></div>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-weibo"></i></a>
+        <a href="#"><i class="fa fa-weixin"></i></a>
+        <a href="#"><i class="fa fa-qq"></i></a>
+        <div class="separator80"></div>
+        <p>AntShares.org All rights resevered.</p>
+        <div class="separator80"></div>
+      </section>
+    </div>
+  </div>
 
-<p>
-  <strong>Nickname:</strong>
-  <%= @address.nickname %>
-</p>
+  <div id="popup_dialog" class="popup_dialog"></div>
+  <div id="popup_shadow" class="popup_shadow"></div>
 
-<p>
-  <strong>Video Address:</strong>
-  <embed src=<%= @address.video %> allowFullScreen="true" quality="high" width="700" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
-</p>
+</body>
 
-<p>
-  <strong>Bitcoin Address:</strong>
-  <%= @address.address %>
-</p>
+<% content_for :javascripts do %>
+  <script>
+    function openpopup() {
+      var popup = $('#popup_dialog');
+      var newdiv = $('#popup_shadow');
 
-<p>
-  <strong>Balance:</strong>
-  <%= @address.balance %>
-</p>
+      newdiv.css ("display", "block");
+      newdiv.css ("top", $(window).scrollTop());
+      $('body').css ("overflow", "hidden");
 
-<%= link_to 'Back', addresses_path(@addresses) %>
+      popup.css ("display", "block");
+      popup.css ("height", "400px");
+      popup.css ("width", "500px");
+      popup.html ("<iframe width=100% height=100% src=\"/addresses/new\"></iframe>");
+
+      newdiv.click (function() {
+        popup.css ("display", "none");
+        newdiv.css ("display", "none");
+        $('body').css ("overflow", "auto");
+      });
+
+      $('body').keydown (function() {
+        if (event.keyCode == 27) {
+          popup.css ("display", "none");
+          newdiv.css ("display", "none");
+          $('body').css ("overflow", "auto");
+          $('body').unbind ('keydown');
+        }
+      });
+
+    }
+  </script>
+<% end %>
