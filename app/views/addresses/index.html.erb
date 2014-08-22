@@ -33,7 +33,8 @@
             <p class="bitcoinlabelitem bitcoinlabelitem-1">已捐金额：</p>
             <p class="bitcoinnumitem bitcoinnumitem-1"><%= address.balance %></p>
             <p class="btcadlabelitem btcadlabelitem-1">捐币地址:</p>
-            <p class="websiteaddritem websiteaddritem-1"><%= link_to address.address, "Bitcoin:" + address.address %></p>
+            <p class="websiteaddritem websiteaddritem-1"><%= link_to address.address, "Bitcoin:" + address.address %>
+            <span><img class="qrcode" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" width="0" height="0" alt=""></img></span></p>
           </div>
         </div>
       <% end %>
@@ -51,7 +52,8 @@
             <p class="bitcoinlabelitem bitcoinlabelitem-1">已捐金额：</p>
             <p class="bitcoinnumitem bitcoinnumitem-1"><%= address.balance %></p>
             <p class="btcadlabelitem btcadlabelitem-1">捐币地址:</p>
-            <p class="websiteaddritem websiteaddritem-1"><%= link_to address.address, "Bitcoin:" + address.address %></p>
+            <p class="websiteaddritem websiteaddritem-1"><%= link_to address.address, "Bitcoin:" + address.address %>
+            <span><img class="qrcode" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" width="0" height="0" alt=""></img></span></p>
           </div>
         </div>
       <% end %>
@@ -91,6 +93,10 @@
             }
           }, 1000);
         }
+      });
+
+      $(".websiteaddritem").mouseover (function() {
+        $(this).find("span img").attr("src", "/qrcodes/" + $(this).find("a").attr("href") + ".png");
       });
     });
 
