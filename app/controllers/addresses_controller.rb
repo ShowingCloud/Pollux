@@ -11,7 +11,8 @@ class AddressesController < ApplicationController
       format.html {
         @addresses_recent = Address.order(created_at: :desc).limit(6)
         @addresses_hottest = Address.order(balance: :desc).limit(9)
-        [@addresses_recent, @addresses_hottest] }
+        @total_amount = Address.sum(:balance)
+        [@addresses_recent, @addresses_hottest, @total_amount] }
       format.any(:xml, :json) { @addresses = Address.all }
     end
   end
