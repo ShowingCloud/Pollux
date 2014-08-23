@@ -91,6 +91,7 @@ vendor/extensions/**/spec/dummy
 
 # sensitive data
 config/database.yml
+config/secrets.yml
 config/initializers/secret_token.rb
 config/initializers/app_init.rb
 db/data.yml
