@@ -1,7 +1,11 @@
 <body class="body index clearfix">
   <div id="all" class="all clearfix">
     <div id="header" class="header clearfix">
-      <div id="banner" class="banner"></div>
+      <div id="banner" class="banner">
+        <div class="totalbtc">
+          <p>已募集比特币总额: <%= @total_amount.round(8) %>BTC</p>
+        </div>
+      </div>
       <div id="ad1" class="ad1 clearfix">
         <p id="addcontent" class="addcontent">小蚁社区比特币ALS#冰桶挑战# 活动公告</p>
       </div>
@@ -20,7 +24,6 @@
         <div class="button1" onclick="javascript:openpopup();"><span>火速参加</span></div>
       </div>
     </div>
-    <input type="hidden" value=<%= @total_amount.round(8) %>></input>
     <div id="newvideotab" class="newvideotab clearfix">
       <div class="videotitleline clearfix">
         <p class="videotitle">最新上传</p>

@@ -27,7 +27,8 @@ class AddressesController < ApplicationController
   def show
     @address.balance = BitcoinRPC.new.getreceivedbyaddress @address.address
     @address.save
-    respond_with @address
+    @total_amount = Address.sum(:balance)
+    respond_with [@address, @total_amount]
   end
 
   # GET /addresses/new

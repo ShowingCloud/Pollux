@@ -2,7 +2,11 @@
   <p id="notice"><%= notice %></p>
   <div id="oneall" class="oneall clearfix">
     <div id="header" class="header clearfix">
-      <div id="banner" class="banner"></div>
+      <div id="banner" class="banner">
+        <div class="totalbtc">
+          <p>已募集比特币总额: <%= @total_amount.round(8) %>BTC</p>
+        </div>
+      </div>
       <div id="ad1" class="ad1 clearfix">
         <p id="addcontent" class="addcontent">小蚁社区比特币ALS#冰桶挑战# 活动公告</p>
       </div>
