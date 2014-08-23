@@ -12,7 +12,8 @@ class AddressesController < ApplicationController
         @addresses_recent = Address.order(created_at: :desc).limit(6)
         @addresses_hottest = Address.order(balance: :desc).limit(9)
         @total_amount = Address.sum(:balance)
-        [@addresses_recent, @addresses_hottest, @total_amount] }
+        @new_address = Address.new
+        [@addresses_recent, @addresses_hottest, @total_amount, @new_address] }
       format.any(:xml, :json) { @addresses = Address.all }
     end
   end
@@ -28,7 +29,8 @@ class AddressesController < ApplicationController
     @address.balance = BitcoinRPC.new.getreceivedbyaddress @address.address
     @address.save
     @total_amount = Address.sum(:balance)
-    respond_with [@address, @total_amount]
+    @new_address = Address.new
+    respond_with [@address, @total_amount, @new_address]
   end
 
   # GET /addresses/new

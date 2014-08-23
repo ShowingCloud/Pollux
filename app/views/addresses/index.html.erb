@@ -20,9 +20,27 @@
           <p>小蚁官网当然也会献出爱心，把我们的比特币投给最酷的挑战者--小蚁超人。</p>
         </div>
       </div>
-      <div id="ad2" class="ad2 clearfix">
-        <div class="button1" onclick="javascript:openpopup();"><span>火速参加</span></div>
+
+      <div class="form">
+        <%= form_for(@new_address) do |f| %>
+          <div class="formfield">
+            <%= f.label :nickname %><br/>
+            <%= f.text_field :nickname, :placeholder => "placeholder" %>
+          </div>
+          <div class="formfield">
+            <%= f.label :email %><br/>
+            <%= f.text_field :email, :placeholder => "placeholder" %>
+          </div>
+          <div class="formfield">
+            <%= f.label :video %><br/>
+            <%= f.text_field :video, :placeholder => "placeholder" %>
+          </div>
+          <div id="ad2" class="ad2 clearfix">
+            <%= f.submit "火速参加", :class => "button1" %>
+          </div>
+        <% end %>
       </div>
+
     </div>
     <div id="newvideotab" class="newvideotab clearfix">
       <div class="videotitleline clearfix">
@@ -102,35 +120,5 @@
         $(this).find("span img").attr("src", "/qrcodes/" + $(this).find("a").attr("href") + ".png");
       });
     });
-
-    function openpopup() {
-      var popup = $('#popup_dialog');
-      var newdiv = $('#popup_shadow');
-
-      newdiv.css ("display", "block");
-      newdiv.css ("top", $(window).scrollTop());
-      $('body').css ("overflow", "hidden");
-
-      popup.css ("display", "block");
-      popup.css ("height", "400px");
-      popup.css ("width", "500px");
-      popup.html ("<iframe width=100% height=100% src=\"/addresses/new\"></iframe>");
-
-      newdiv.click (function() {
-        popup.css ("display", "none");
-        newdiv.css ("display", "none");
-        $('body').css ("overflow", "auto");
-      });
-
-      $('body').keydown (function() {
-        if (event.keyCode == 27) {
-          popup.css ("display", "none");
-          newdiv.css ("display", "none");
-          $('body').css ("overflow", "auto");
-          $('body').unbind ('keydown');
-        }
-      });
-
-    }
   </script>
 <% end %>
