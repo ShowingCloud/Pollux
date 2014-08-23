@@ -41,5 +41,5 @@ gem 'thin'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'yaml_db'
+gem 'yaml_db', github: 'jetthoughts/yaml_db'
 gem 'httparty'
