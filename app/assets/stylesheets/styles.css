@@ -38,9 +38,8 @@ body {
   position: relative;
   float: left;
   clear: both;
-  width: 1170px;
-  height: 65px;
-  background-color: rgb(255, 255, 255);
+  width: 1170px;  
+  background-color: rgb(30, 175, 189);
 }
 
 .addcontent {
@@ -110,7 +109,7 @@ body {
 .button1 {
     width:250px;
     height:45px;
-    margin:10px auto 0;
+    margin:10px auto 25px;
     border:3px solid rgb(254, 254, 254);
     border-radius:15px;
     background-image:-webkit-linear-gradient(269deg, rgb(158, 233, 217) 0%, rgb(33, 125, 159) 100%);
@@ -258,16 +257,9 @@ body {
   color: rgb(121, 120, 121);
 }
 
-.bitcoinlabelitem:active,
-.bitcoinnumitem:active,
-.btcadlabelitem:active,
-.nicknameitem:active,
-.websiteaddritem:active,
-.websiteaddritem:focus {
-  /* bottom: auto; */
-  /* right: auto; */
-  /* width: auto; */
-  /* margin-right: 0; */
+a:hover  
+a:focus {
+color: rgb(232, 230, 42);
 }
 
 .bitcoinlabelitem-1 {
@@ -592,8 +584,9 @@ body {
 .videodiv-9:active,
 .videodiv-9:focus,
 .videodiv-9:hover {
-  box-shadow: 0 1px 2px rgba(46, 46, 46, 0.5);
+/*  box-shadow: 0 1px 2px rgba(46, 46, 46, 0.5);*/
 }
+
 
 .videodiv-3 {
   position: relative;
@@ -766,7 +759,7 @@ body {
     float:left;
     width: 100%;
     background-color: ;
-    margin: 100px 0 0 0;
+    margin:  0;
     background: url('/assets/footer.jpg') rgb(30, 175, 189) no-repeat center ;
     background-size: cover;    
     text-align: center;
@@ -792,7 +785,8 @@ body {
     border: 2px solid #fff;
     color: #fff;
     padding: 13px;
-    min-width: 26px;
+    min-width: 26;
+
     background: transparent;
     -webkit-border-radius: 350px;
     -moz-border-radius: 350px;
@@ -815,4 +809,61 @@ body {
 }
 .separator80 {
   height: 80px;
+}
+
+
+.form{
+  float: left;
+  clear: both;
+  width: 1170px;
+  background-color: rgb(30, 175, 189);
+  text-align: center;
+  border-top: 1px solid rgb(254, 254, 254);
+}
+
+.formfield{
+ float: left;
+ width: 390px;
+ margin: 15px 0;
+color: rgb(255, 255, 255);
+}
+
+input:not([type=submit])  {
+    width: 60%;
+    font-size: 16px;
+    margin-bottom: 20px;
+    padding: 6px 16px;
+/*    border: 2px solid #cccccc;*/
+    -webkit-border-radius: 45px;
+    -moz-border-radius: 45px;
+    border-radius: 45px;  
+    color: #666; 
+    transition: border-color 0.6s;
+    -webkit-transition: border-color 0.6s;
+    text-align: center;
+    background-color: rgb(255, 255, 255)
+  }
+
+input:focus, textarea:focus {
+    outline: 0 transparent;
+    border: 2px solid rgb(232, 230, 42);
+    margin: 1px;
+}
+
+input[type="submit"]  {
+    font-size: 18px;
+    padding: 15px 50px;
+    margin: 0;
+    color: #66cccc;
+    border: 2px solid #66cccc;
+}
+
+.totalbtc{
+width: auto;
+min-height: 36px;
+margin: 100 auto;
+font-size: 3em;
+line-height: 2;
+text-align: center;
+color: rgb(255, 255, 255);
 }
