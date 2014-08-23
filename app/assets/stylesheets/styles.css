@@ -790,7 +790,7 @@ color: rgb(232, 230, 42);
     width: 100%;
     background-color: ;
     margin:  0;
-    background: url('/assets/footer.jpg') rgb(30, 175, 189) no-repeat center ;
+    background: rgb(30, 175, 189);
     background-size: cover;    
     text-align: center;
     font-size: 14px;
