@@ -80,13 +80,3 @@
   </div>
 
 </body>
-
-<% content_for :javascripts do %>
-  <script>
-    $(document).ready (function() {
-      $(".websiteaddritem").mouseover (function() {
-        $(this).find("span img").attr("src", "/qrcodes/" + $(this).find("a").text() + ".png");
-      });
-    });
-  </script>
-<% end %>
