@@ -25,16 +25,16 @@
       <div class="form">
         <%= form_for(@new_address) do |f| %>
           <div class="formfield">
-            <%= f.label :nickname %><br/>
-            <%= f.text_field :nickname, :placeholder => "placeholder" %>
+            <%= f.label "视频名称" %><br/>
+            <%= f.text_field :nickname, :placeholder => "起个酷炫的视频名称" %>
           </div>
           <div class="formfield">
-            <%= f.label :email %><br/>
-            <%= f.text_field :email, :placeholder => "placeholder" %>
+            <%= f.label "邮箱地址" %><br/>
+            <%= f.text_field :email, :placeholder => "留下你的邮箱地址" %>
           </div>
           <div class="formfield">
-            <%= f.label :video %><br/>
-            <%= f.text_field :video, :placeholder => "placeholder" %>
+            <%= f.label "视频链接" %><br/>
+            <%= f.text_field :video, :placeholder => "粘贴视频Flash地址" %>
           </div>
           <div id="ad2" class="ad2 clearfix">
             <%= f.submit "火速参加", :class => "button1" %>
